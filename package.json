@@ -7,7 +7,10 @@
     "aws-sdk": "2.*"
   },
   "dependencies": {
-    "cfn-lambda": "toshke/cfn-lambda#development"
+    "cfn-lambda": "toshke/cfn-lambda#development",
+    "cloudflare": "^2.7.0",
+    "lodash": "^4.17.21",
+    "underscore": "^1.12.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
