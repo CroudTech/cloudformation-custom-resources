@@ -1,0 +1,17 @@
+{
+  "RequestType" : "Delete",
+  "ResponseURL" : "http://pre-signed-S3-url-for-response",
+  "StackId" : "arn:aws:cloudformation:us-west-2:123456789012:stack/stack-name/guid",
+  "RequestId" : "unique id for this create request",
+  "ResourceType" : "Custom::TestResource",
+  "LogicalResourceId" : "MyTestResource",
+  "PhysicalResourceId" : "eb960b901901249706e42a2be54f9fa7",
+  "ResourceProperties" : {
+    "ZoneName": "croud.tech",
+    "Name": "testapihandler",
+    "Type": "CNAME",
+    "Value": "bbc.co.uk",
+    "Proxied": false,
+    "TTL": 1
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [
+    "Type", 
+    "Name",
+    "ZoneName",
+    "Value"
+  ],
+  "properties": {
+    "Name":{
+      "type": "string"
+    },
+    "Value": {
+      "type": "string"
+    },
+    "ZoneName": {
+      "type": "string"
+    },
+    "Proxied": {
+      "type": "boolean",
+      "default": false
+    },
+    "TTL": {
+      "type": "integer",
+      "default": 1
+    }
+  }
+}
+
