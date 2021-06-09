@@ -17,5 +17,14 @@ install_packages: init
 
 .PHONY: package
 package: install_packages
+	rm -fr build
 	mkdir build
-	zip -r ./build/cfn-ccr-nodejs${NODE_VERSION}.zip .
+	zip -r ./build/ccr-nodejs-$$(git describe --exact-match --tags $$(git log -n1 --pretty='%h')).zip .
+
+
+.PHONY: cloudflare_record
+cloudflare_record:
+	rm -fr cloudflare_record_build
+	mkdir cloudflare_record_build
+	cd cloudflare_record && sam build --use-container
+	cd cloudflare_record/.aws-sam/build/CloudflareRecordCustomResource && zip -r ../../../../cloudflare_record_build/cloudflare-record-python-$$(git describe --exact-match --tags $$(git log -n1 --pretty='%h')).zip *

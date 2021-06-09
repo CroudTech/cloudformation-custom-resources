@@ -151,16 +151,16 @@ def delete_record(event, __):
 
     return True
 
-@helper.poll_create
-def poll_create(event, context):
-    if event['ResourceProperties']['Proxied']:
-        return True
-    zone_name = event['ResourceProperties']['ZoneName']
-    name = event['ResourceProperties']['Name']
-    type = event['ResourceProperties']['Type']
-    value = event['ResourceProperties']['Value']
+# @helper.poll_create
+# def poll_create(event, context):
+#     if event['ResourceProperties']['Proxied']:
+#         return True
+#     zone_name = event['ResourceProperties']['ZoneName']
+#     name = event['ResourceProperties']['Name']
+#     type = event['ResourceProperties']['Type']
+#     value = event['ResourceProperties']['Value']
 
-    return str(cf.chechDns(zone_name, type, name, value)) == value
+#     return str(cf.chechDns(zone_name, type, name, value)) == value
 
 def handler(event, context):
     helper(event, context)
